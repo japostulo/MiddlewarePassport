@@ -9,7 +9,7 @@ use Japostulo\MiddlewarePassport\Services\UserCacheService;
 use Japostulo\MiddlewarePassport\Exceptions\SingleSignOnException;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
-class SingleSignOnPasswordAuthenticate extends Middleware
+class PasswordAuthenticate extends Middleware
 {
     public function __construct(private UserCacheService $service)
     {

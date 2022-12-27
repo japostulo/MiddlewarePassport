@@ -8,7 +8,7 @@ use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Japostulo\MiddlewarePassport\Exceptions\SingleSignOnException;
 use Japostulo\MiddlewarePassport\Repositories\SingleSignOnRepository;
 
-class SingleSignOnClientAuthenticate extends Middleware
+class ClientAuthenticate extends Middleware
 {
     public function __construct(private SingleSignOnRepository $repository)
     {
