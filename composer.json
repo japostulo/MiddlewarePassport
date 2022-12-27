@@ -1,16 +1,23 @@
 {
     "name": "japostulo/middleware-passport",
     "description": "Pacote que disponibiliza um middleware para integrar com o laravel passport para instrospecção",
-    "autoload": {
-        "psr-4": {
-            "JapostuloMiddlewarePassport\\": "src/"
-        }
-    },
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "passport"
+    ],
     "authors": [
         {
             "name": "João Apostulo Neto",
             "email": "japostulo@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Japostulo\\MiddlewarePassport\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0.2"
+    }
 }
