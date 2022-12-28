@@ -3,7 +3,7 @@
 namespace Japostulo\MiddlewarePassport\Middlewares;
 
 use Exception;
-use Japostulo\MiddlewarePassportModels\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Japostulo\MiddlewarePassport\Services\UserCacheService;
 use Japostulo\MiddlewarePassport\Exceptions\SingleSignOnException;
