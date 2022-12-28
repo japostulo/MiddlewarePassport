@@ -3,7 +3,6 @@
 namespace Japostulo\MiddlewarePassport\Middlewares;
 
 use Exception;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Japostulo\MiddlewarePassport\Services\UserCacheService;
 use Japostulo\MiddlewarePassport\Exceptions\SingleSignOnException;
@@ -13,6 +12,8 @@ class PasswordAuthenticate extends Middleware
 {
     public function __construct(private UserCacheService $service)
     {
+        $config = require('../config/auth.php');
+        $this->modelClass = $config['sso']['users'] ?? \App\Models\User::class;
     }
 
     public function handle($request, $next, ...$guards)
@@ -33,7 +34,7 @@ class PasswordAuthenticate extends Middleware
     public function setLaravelAuthUser($user, $request): void
     {
         $request->setUserResolver(function () use ($user) {
-            return new User($user);
+            return new $this->modelClass($user);
         });
 
         Auth::setUser($request->user());
